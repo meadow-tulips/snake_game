@@ -1,0 +1,15 @@
+# Build folder
+build
+
+# Library
+bin
+
+# Output Folder
+out
+
+# Object Folder
+obj
+
+.vs
+.vscode
+CmakeSettings.json
