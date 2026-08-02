@@ -28,30 +28,29 @@ int main ()
 	
 	// game loop
 	Snake _snake;
-	Food food(200, 100);
 
 	BeginDrawing();
-	ClearBackground(BLACK);
+	_snake.draw();
 
 	while (!WindowShouldClose())		// run the loop until the user presses ESCAPE or presses the Close button on the window
 	{
+		ClearBackground(BLACK);
 		_snake.draw();
-		food.getEntity().draw();
+		_snake.recordDirection(GetKeyPressed());
+		_snake.move();
+
+		Food food;
 
 		// drawing
 		// Setup the back buffer for drawing (clear color and depth buffers)
 
 		//DrawRectangleDrawRectangle(entity.getPosX() - 8, entity.getPosY(), 8, 8, BLUE);
 		//DrawRectangle(entity.getPosX(), entity.getPosY(), 8, 8, BLUE);
-		//entity.recordDirection(GetKeyPressed());
 		//entity.move();
 		
 		//DrawText(std::to_string(GetFrameTime()).c_str(), 10, 10, 18, WHITE);
-
 		EndDrawing();
 	}
-
-
 	// destroy the window and cleanup the OpenGL context
 	CloseWindow();
 	return 0;

@@ -6,6 +6,5 @@ class Food {
 	std::unique_ptr<Entity> entity = NULL;
 public:
 	Food(int posx = 200, int posy = 100);
-	Entity& getEntity();
 };
 #endif // !FOOD_H
